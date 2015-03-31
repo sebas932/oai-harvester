@@ -1,0 +1,13 @@
+{
+    "name": "oai/harvester",
+    "description": "OAI Harvester client",
+    "require": {
+        "scriptotek/oai-pmh-client": "0.3.*"
+    },
+    "authors": [
+        {
+            "name": "Sebastian Amariles",
+            "email": "s.amariles@cgiar.org"
+        }
+    ]
+}
