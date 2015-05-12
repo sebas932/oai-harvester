@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "jquery": "latest",
-    "Bootflat": "latest"
+    "Bootflat": "latest",
+    "jsuri": "latest"
   },
   "homepage": "https://github.com/sebas932/oai-harvester",
   "authors": [

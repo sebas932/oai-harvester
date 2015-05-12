@@ -3,15 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>OAI-PMH Harvester - Data & Tools</title>
-	<!-- Loadind JS libraries -->
+	<!-- Loadind JQuery lib -->
 	<script src="libs/js/jquery/dist/jquery.min.js"></script>
+
+	<!-- Load jsurl Lib-->
+	<script src="libs/js/jsuri/Uri.js"></script>
+
+	<!-- Load index.js -->
+	<script src="js/index.js"></script>
 	
 	<!-- Load Bootflat -->
 	<link rel="stylesheet" href="libs/js/Bootflat/css/bootstrap.min.css">
   <link rel="stylesheet" href="libs/js/Bootflat/bootflat/css/bootflat.css">
 	
-	<!-- Load index.js -->
-	<script src="js/index.js"></script>
+	
 </head>
 <body>
 

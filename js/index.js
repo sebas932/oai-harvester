@@ -14,7 +14,12 @@ $( document ).ready(function() {
 
 
 	 function getData(){
-	 	$( "#output" ).html("Buscando ... "+ $('#url').val()); 
+	 	var channelUrl = $('#url').val();
+	 	var uri = new Uri(channelUrl);
+
+	 	$( "#output" ).html("Buscando ... "+ uri.path()); 
+
+
 	 }
   
 });
