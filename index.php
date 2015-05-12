@@ -1,108 +1,39 @@
-<?php
-require_once('vendor/autoload.php');
-use Scriptotek\OaiPmh\Client as OaiPmhClient;  
- 
-//$recordId = 'oai:cgspace.cgiar.org:10568/52163'; 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>OAI-PMH Harvester - Data & Tools</title>
+	<!-- Loadind JS libraries -->
+	<script src="libs/js/jquery/dist/jquery.min.js"></script>
+	
+	<!-- Load Bootflat -->
+	<link rel="stylesheet" href="libs/js/Bootflat/css/bootstrap.min.css">
+  <link rel="stylesheet" href="libs/js/Bootflat/bootflat/css/bootflat.css">
+	
+	<!-- Load index.js -->
+	<script src="js/index.js"></script>
+</head>
+<body>
 
-getCGSpace('oai:cgspace.cgiar.org:10568/52163');
+<div class="container">
 
-function getCGSpace($recordId){ 
-	$url = 'https://cgspace.cgiar.org/oai/request';   
-	$node = requestMetadata($url, $recordId)->first('oai_dc:dc');  
-
-	$json = json_encode(getMetadata($node));
-	echo ($json);
-}
-
-
-function requestMetadata($url, $recordId){  
-	$client= new OaiPmhClient($url, array(
-    'schema' => 'oai_dc',
-    'user-agent' => 'DataTools/0.1',
-    'max-retries' => 10,
-    'sleep-time-on-error' => 30,
-	));
-
-	try {
-    $record = $client->record($recordId); 
-	} catch (Scriptotek\OaiPmh\ConnectionError $e) {
-	    echo $e->getMsg();
-	    die;
-	} catch (Scriptotek\OaiPmh\BadRequestError $e) {
-	    echo 'Bad request: ' . $e->getMsg() . "\n";
-	    die;
-	}
-
-	//return $record->datestamp . "\n";
-	return $record->data;
-
-}
-
-
-function getMetadata ($node){
-
-	$output = array();
-	// Title
-	foreach ($node->all('dc:title') as $item) {
-   	$output["title"][] = (string)$item;
-	}
-	// Creator
-	foreach ($node->all('dc:creator') as $item) {
-   	$output["creator"][] = (string)$item;
-	}
-	// Subject
-	foreach ($node->all('dc:subject') as $item) {
-   	$output["subject"][] = (string)$item;
-	}
-	// Description
-	foreach ($node->all('dc:description') as $item) {
-   	$output["description"][] = (string)$item;
-	}
-	// Publisher
-	foreach ($node->all('dc:publisher') as $item) {
-   	$output["publisher"][] = (string)$item;
-	} 
-	// Contributor
-	foreach ($node->all('dc:contributor') as $item) {
-   	$output["contributor"][] = (string)$item;
-	}
-	// Date
-	foreach ($node->all('dc:date') as $item) {
-   	$output["date"][] = (string)$item;
-	}
-	// Type
-	foreach ($node->all('dc:type') as $item) {
-   	$output["type"][] = (string)$item;
-	}
-	// Format
-	foreach ($node->all('dc:format') as $item) {
-   	$output["format"][] = (string)$item;
-	}
-	// Identifiers
-	foreach ($node->all('dc:identifier') as $item) {
-   	$output["identifier"][] = (string)$item;
-	}
-	// Source
-	foreach ($node->all('dc:source') as $item) {
-   	$output["source"][] = (string)$item;
-	}
-	// Language
-	foreach ($node->all('dc:language') as $item) {
-   	$output["language"][] = (string)$item;
-	}
-	// Relation
-	foreach ($node->all('dc:relation') as $item) {
-   	$output["relation"][] = (string)$item;
-	}
-	// Coverage
-	foreach ($node->all('dc:coverage') as $item) {
-   	$output["coverage"][] = (string)$item;
-	}
-	// Rights
-	foreach ($node->all('dc:rights') as $item) {
-   	$output["rights"][] = (string)$item;
-	} 
-
-	return $output;
-}
-
+	<div class="row">
+		<p><strong>Example of URL :</strong> https://cgspace.cgiar.org/handle/10568/52163</p>
+		<form action="">
+			<select class="form-control" name="source" id="source">
+				<option value="-1">Select Channel ...</option>
+				<option value="cgspace">CGSpace</option>
+			</select> 
+			<input type="text" class="form-control" name="url" id="url" placeholder="URL">
+			<input type="button" class="btn btn-info" id="check-button" value="Check">
+		</form>
+	</div>
+	<div class="row">
+		<p id="output">
+			
+		</p>
+	</div>
+</div>
+	
+</body>
+</html>

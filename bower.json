@@ -1,0 +1,27 @@
+{
+  "name": "OAI Harvester",
+  "version": "1.0.0",
+  "dependencies": {
+    "jquery": "latest",
+    "Bootflat": "latest"
+  },
+  "homepage": "https://github.com/sebas932/oai-harvester",
+  "authors": [
+    "sebas932 <sebas932@gmail.com>"
+  ],
+  "main": "/css/style.css",
+  "keywords": [
+    "OAI",
+    "metadata",
+    "dublin",
+    "core"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

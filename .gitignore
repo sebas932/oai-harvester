@@ -219,6 +219,6 @@ pip-log.txt
 #Composer
 composer.phar
 composer.lock
-vendor/
+libs/
 
 

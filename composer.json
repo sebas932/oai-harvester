@@ -9,5 +9,8 @@
             "name": "Sebastian Amariles",
             "email": "s.amariles@cgiar.org"
         }
-    ]
+    ],
+    "config": {
+        "vendor-dir": "libs/php/"
+    }
 }
