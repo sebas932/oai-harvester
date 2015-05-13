@@ -28,9 +28,9 @@
     <div class="panel-heading">
       <h3 class="panel-title">Metadata Validation</h3> 
     </div>  
-	  <div class="panel-body">
+	  <div class="panel-body"> 
 	  	<!-- Information Section --> 
-      <p><strong>Example of URL :</strong> https://cgspace.cgiar.org/handle/10568/52163</p>
+      <p id="info-cgspace" style="display:none"><strong>Example of URL :</strong> <code>https://cgspace.cgiar.org/handle/10568/52163</code></p>
 	    
 			<!-- Form Section --> 
 			<p><strong>Select a dissemination Channel:</strong></p> 
@@ -47,8 +47,7 @@
 		        <button class="btn btn-info" id="check-button" data-type="last">Check</button>
 		      </span>
 		    </div>
-			</div>  
-
+			</div>   
 
 			<!-- Output Section -->	 
 			<div class="col-md-12">

@@ -2,6 +2,6 @@ body{
 	background-color: rgb(241, 242, 246);
 }
 
-input, textarea{
+input, textarea, button, select{
 	margin-top: 3px;
 }

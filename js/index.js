@@ -5,8 +5,17 @@ $( document ).ready(function() {
   $('#check-button').on("click", getData);
 
   $("#source").change(function(e) {
-  	console.log($(e).target);
-	 	$('#formBlock').show(500);
+  	var optionSelected = $(e.target).val();
+  	if(optionSelected){
+  		console.log(optionSelected);
+	 		$('#formBlock').show(500);
+  		if(optionSelected=='cgspace'){ 
+  			$('#info-cgspace').fadeIn(500); 
+  		}	
+  	}else{
+  		$('#formBlock').hide(500);
+  	}
+  		
 	});
  
 
@@ -55,10 +64,9 @@ $( document ).ready(function() {
 	      	$('#coverage').val(data.coverage);
 	      	$('#rights').val(data.rights); 
 
-
 	      },
 	      complete: function(){
-	      	$("#output").html("Founded metadata for "+identifier );  
+	      	$("#output").html("Found metadata for "+identifier );  
 	      }
 		  }); 
 		} 
