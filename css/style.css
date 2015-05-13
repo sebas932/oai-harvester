@@ -1,0 +1,7 @@
+body{
+	background-color: rgb(241, 242, 246);
+}
+
+input, textarea{
+	margin-top: 3px;
+}

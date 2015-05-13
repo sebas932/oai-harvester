@@ -15,29 +15,70 @@
 	<!-- Load Bootflat -->
 	<link rel="stylesheet" href="libs/js/Bootflat/css/bootstrap.min.css">
   <link rel="stylesheet" href="libs/js/Bootflat/bootflat/css/bootflat.css">
+
+  <link rel="stylesheet" href="css/style.css">
 	
 	
 </head>
 <body>
 
-<div class="container">
+<div class="container"> 
+	<br>
+	<div class="panel panel-info">
+    <div class="panel-heading">
+      <h3 class="panel-title">Metadata Validation</h3> 
+    </div>  
+	  <div class="panel-body">
+	  	<!-- Information Section --> 
+      <p><strong>Example of URL :</strong> https://cgspace.cgiar.org/handle/10568/52163</p>
+	    
+			<!-- Form Section --> 
+			<p><strong>Select a dissemination Channel:</strong></p> 
+			<div class="col-md-4">
+				<select class="form-control" name="source" id="source">
+					<option value="">Select Channel ...</option>
+					<option value="cgspace">CGSpace</option>
+				</select>  
+			</div>
+			<div class="col-md-8">
+				<div id="formBlock" class="input-group form-search" style="display:none">
+		      <input type="text" class="form-control search-query" name="url" id="url" placeholder="URL">
+		      <span class="input-group-btn">
+		        <button class="btn btn-info" id="check-button" data-type="last">Check</button>
+		      </span>
+		    </div>
+			</div>  
 
-	<div class="row">
-		<p><strong>Example of URL :</strong> https://cgspace.cgiar.org/handle/10568/52163</p>
-		<form action="">
-			<select class="form-control" name="source" id="source">
-				<option value="-1">Select Channel ...</option>
-				<option value="cgspace">CGSpace</option>
-			</select> 
-			<input type="text" class="form-control" name="url" id="url" placeholder="URL">
-			<input type="button" class="btn btn-info" id="check-button" value="Check">
-		</form>
-	</div>
-	<div class="row">
-		<p id="output">
-			
-		</p>
-	</div>
+
+			<!-- Output Section -->	 
+			<div class="col-md-12">
+				<br><br>
+				<div class=" panel panel-default">
+	        <div class="panel-heading">Metadata <span id="output" class="label label-default" style="float:right"></span></div>
+	        <div class="panel-body">
+	        	<input class="form-control" type="text" name="" id="title" placeholder="Title">			
+						<input class="form-control" type="text" name="" id="creator" placeholder="Creator(s)">				
+						<input class="form-control" type="text" name="" id="subject" placeholder="Subjet">		 
+						<textarea class="form-control" id="description" placeholder="Description" name="" cols="30" rows="5"></textarea>
+						<input class="form-control" type="text" name="" id="publisher" placeholder="Publisher">
+						<input class="form-control" type="text" name="" id="contributor" placeholder="Contributor">
+						<input class="form-control" type="text" name="" id="date" placeholder="Date">
+						<input class="form-control" type="text" name="" id="type" placeholder="Type">
+						<input class="form-control" type="text" name="" id="format" placeholder="Format">
+						<input class="form-control" type="text" name="" id="identifier" placeholder="Identifier">
+						<input class="form-control" type="text" name="" id="source" placeholder="Source">
+						<input class="form-control" type="text" name="" id="language" placeholder="Language">
+						<input class="form-control" type="text" name="" id="relation" placeholder="Relation">
+						<input class="form-control" type="text" name="" id="coverage" placeholder="Coverage">
+						<input class="form-control" type="text" name="" id="rights" placeholder="Rights">
+	        </div>
+	        
+	      </div> 
+			</div>
+			 
+		</div>
+  </div> 
+
 </div>
 	
 </body>
