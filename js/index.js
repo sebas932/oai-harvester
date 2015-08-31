@@ -1,9 +1,10 @@
-var $channelsSelect;
+var $channelsSelect, $recordData;
 var timeoutID;
 
 $( document ).ready(function() {
 	// Variables
 	$channelsSelect = $('#source');
+	$recordData = $('#url');
 
 	// Events
   $('#url').on("keyup", urlCheck);
@@ -16,6 +17,7 @@ $( document ).ready(function() {
   		$('#formBlock').hide(500);
   		return;
   	}
+  	$recordData.val('');
  		$('#formBlock').show(500);
 		$('#info-'+optionSelected).fadeIn(500).siblings().fadeOut(); 
 	});
@@ -33,7 +35,7 @@ $( document ).ready(function() {
 	function getData(e){
 		e.preventDefault();
 		var optionSelected = $channelsSelect.val();
-		var channelUrl = $('#url').val();
+		var channelUrl = $recordData.val();
 		if(channelUrl.length > 1) { 
 			var uri = new Uri(channelUrl); 
 			var uriPath = uri.path();

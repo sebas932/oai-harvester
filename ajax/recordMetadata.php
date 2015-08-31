@@ -21,14 +21,14 @@ function getCGSpace($recordId){
 }
 
 function getAgTrials($recordId){ 
-	$url = 'http://oai2.agtrials.org/oai.php';   
+	$url = 'http://oai2.agtrials.org/oai2.php';   
 	$record = new OaiHarvestRecord($url, $recordId);    
 	$json = json_encode($record->getMetadata());
 	print_r($json); 
 }
 
 function getAmkn($recordId){ 
-	$url = 'http://lab.amkn.org/aoi/';   
+	$url = 'http://lab.amkn.org/oai/';   
 	$record = new OaiHarvestRecord($url, $recordId);    
 	$json = json_encode($record->getMetadata());
 	print_r($json); 
