@@ -44,7 +44,7 @@ $( document ).ready(function() {
 			};
 			if(optionSelected == 'cgspace'){
 				data.identifier = "oai:"+uriHost+":"+ uriPath.slice(8,uriPath.length);
-			}else if(optionSelected == 'amkn'){
+			}else{
 				data.identifier = channelUrl;
 			}
 			
