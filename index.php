@@ -30,14 +30,21 @@
     </div>  
 	  <div class="panel-body"> 
 	  	<!-- Information Section --> 
-      <p id="info-cgspace" style="display:none"><strong>Example of URL :</strong> <code>https://cgspace.cgiar.org/handle/10568/52163</code></p>
+	  	<div id="examples">
+	  		<p class="example" id="info-cgspace" style="display:none"><strong>Example of URL :</strong> <code>https://cgspace.cgiar.org/handle/10568/52163</code></p>	
+	  		<p class="example" id="info-agtrials" style="display:none"><strong>Example of URL :</strong> <code>http://www.agtrials.org/tbtrial/38</code></p>
+	  		<p class="example" id="info-amkn" style="display:none"><strong>Example of URL :</strong> <code>oai:amkn.org:amkn_blog_posts/4260</code></p>
+	  	</div>
+      
 	    
 			<!-- Form Section --> 
 			<p><strong>Select a dissemination Channel:</strong></p> 
 			<div class="col-md-4">
 				<select class="form-control" name="source" id="source">
-					<option value="">Select Channel ...</option>
+					<option value="-1">Select Channel ...</option>
 					<option value="cgspace">CGSpace</option>
+					<option value="agtrials">Agriculture Trials</option>
+					<option value="amkn">AMKN</option>
 				</select>  
 			</div>
 			<div class="col-md-8">

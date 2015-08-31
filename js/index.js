@@ -1,21 +1,23 @@
+var $channelsSelect;
 var timeoutID;
 
 $( document ).ready(function() {
+	// Variables
+	$channelsSelect = $('#source');
+
+	// Events
   $('#url').on("keyup", urlCheck);
   $('#check-button').on("click", getData);
 
   $("#source").change(function(e) {
-  	var optionSelected = $(e.target).val();
-  	if(optionSelected){
-  		console.log(optionSelected);
-	 		$('#formBlock').show(500);
-  		if(optionSelected=='cgspace'){ 
-  			$('#info-cgspace').fadeIn(500); 
-  		}	
-  	}else{
+  	var optionSelected = $channelsSelect.val();
+  	if (optionSelected == -1){
+  		$('.example').hide();
   		$('#formBlock').hide(500);
+  		return;
   	}
-  		
+ 		$('#formBlock').show(500);
+		$('#info-'+optionSelected).fadeIn(500).siblings().fadeOut(); 
 	});
  
 
@@ -30,22 +32,29 @@ $( document ).ready(function() {
 
 	function getData(e){
 		e.preventDefault();
+		var optionSelected = $channelsSelect.val();
 		var channelUrl = $('#url').val();
 		if(channelUrl.length > 1) { 
 			var uri = new Uri(channelUrl); 
 			var uriPath = uri.path();
 			var uriHost = uri.host();
-			var uriId = uriPath.slice(8,uriPath.length);
-			var identifier = "oai:"+uriHost+":"+ uriId;
 
+			var data = {
+				source : optionSelected
+			};
+			if(optionSelected == 'cgspace'){
+				data.identifier = "oai:"+uriHost+":"+ uriPath.slice(8,uriPath.length);
+			}else if(optionSelected == 'amkn'){
+				data.identifier = channelUrl;
+			}
+			
 		  $.ajax({ 
 	      'url': 'ajax/recordMetadata.php',
 	      'type': "GET",
-	      'data': { source: "cgspace",
-	               identifier : identifier },
+	      'data': data,
 	      'dataType': "json",
 	      beforeSend: function(){
-	      	$("#output").html("Searching ... "+identifier );  
+	      	$("#output").html("Searching ... "+data.identifier );  
 	      },
 	      success: function(data) {   
 	      	$('#title').val(data.title);
@@ -66,7 +75,7 @@ $( document ).ready(function() {
 
 	      },
 	      complete: function(){
-	      	$("#output").html("Found metadata for "+identifier );  
+	      	$("#output").html("Found metadata for "+data.identifier );  
 	      }
 		  }); 
 		} 
