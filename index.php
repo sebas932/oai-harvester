@@ -33,10 +33,9 @@
 	  	<div id="examples">
 	  		<p class="example" id="info-cgspace" style="display:none"><strong>Example of URL :</strong> <code>https://cgspace.cgiar.org/handle/10568/52163</code></p>	
 	  		<p class="example" id="info-agtrials" style="display:none"><strong>Example of URL :</strong> <code>oai:agtrials.org:60</code></p>
-	  		<p class="example" id="info-amkn" style="display:none"><strong>Example of URL :</strong> <code>oai:amkn.org:amkn_blog_posts/4260</code></p>
+	  		<p class="example" id="info-amkn" style="display:none"><strong>Example of URL :</strong> <code>oai:amkn.org:4260</code></p>
 	  	</div>
       
-	    
 			<!-- Form Section --> 
 			<p><strong>Select a dissemination Channel:</strong></p> 
 			<div class="col-md-4">
