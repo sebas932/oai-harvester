@@ -18,7 +18,6 @@
 
   <link rel="stylesheet" href="css/style.css">
 	
-	
 </head>
 <body>
 
@@ -39,7 +38,7 @@
 			<!-- Form Section --> 
 			<p><strong>Select a dissemination Channel:</strong></p> 
 			<div class="col-md-4">
-				<select class="form-control" name="source" id="source">
+				<select class="form-control" name="channelUrl" id="channelUrl">
 					<option value="-1">Select Channel ...</option>
 					<option value="cgspace">CGSpace</option>
 					<option value="agtrials">Agriculture Trials</option>
@@ -77,10 +76,8 @@
 						<input class="form-control" type="text" name="" id="coverage" placeholder="Coverage">
 						<input class="form-control" type="text" name="" id="rights" placeholder="Rights">
 	        </div>
-	        
 	      </div> 
-			</div>
-			 
+			</div> 
 		</div>
   </div> 
 
